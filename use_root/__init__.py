@@ -1,7 +1,7 @@
 
 import sys
 
-def inject(os, prefix = "/src"):
+def inject(os, __file__=__file__, prefix = "/src"):
     file_path = (
         os.path.realpath('.')
         if "ipykernel_launcher" in sys.argv[0]
