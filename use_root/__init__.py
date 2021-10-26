@@ -1,11 +1,11 @@
 
 import sys
 
-def inject(os, __file__=__file__, prefix = "/src"):
+def inject(os, file=None, prefix = "/src"):
     file_path = (
         os.path.realpath('.')
         if "ipykernel_launcher" in sys.argv[0]
-        else "/".join(os.path.split(os.path.realpath(__file__))[0].split("/"))
+        else "/".join(os.path.split(os.path.realpath(file or __file__))[0].split("/"))
     )
 
     project_path = file_path[: file_path.rindex(prefix)] if prefix in file_path else file_path
